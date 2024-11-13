@@ -6,25 +6,26 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:51:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/13 16:47:11 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:09:46 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 //Declare pointers to two data structures/linked lists, one for stack `a` and another for `b`
-	//Set both pointers to NULL to avoid undefined behaviour and indicate we're starting with empty stacks
+//Set both pointers to NULL to avoid undefined behaviour and indicate we're starting with empty stacks
 int main (int argc, char **argv)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
+	char			**updated_args;
 
-	a = NULL; //Set them to Null to avoid undifined behaviour
+	a = NULL;
 	b = NULL;
-	parsing_arguments(argc, argv);
-	init_stack_a(&a, argv + 1);
-	if (is_dublicate(a))
-		return (NULL);
+	updated_args = parsing_arguments(argc, argv);
+	init_stack_a(&a, updated_args);
+	//if (is_dublicate(a))
+		//return (NULL);
 	if(!stack_shorted(a))
 	{
 		// Short jusrt swap them 2 
@@ -65,12 +66,24 @@ char  **parsing_arguments(int argc, char **argv)
 		}
 		av_arr[i] = NULL;
 	}
-		return (av_arr);
+	return (av_arr);
 }
 
-int init_stack_a(t_stack_node *a, char **argv)
+int init_stack_a(t_stack_node **a, char **arguments)
 {
 	// Initialize and store the arguments after that being checked and being parsed
+	long	a;
+	int 	i;
+
+	i = 0;
+	while (arguments[i])
+	{
+		a = (long)ft_atoi(arguments[i]);
+		if (a  > INT_MAX || a < INT_MIN)
+			free(a);
+		//dublication check 
+		append_node(a, (int)a);
+	}
 	
 }
 
