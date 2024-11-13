@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:51:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/13 17:09:46 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/13 19:30:16 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,13 +78,38 @@ int init_stack_a(t_stack_node **a, char **arguments)
 	i = 0;
 	while (arguments[i])
 	{
-		a = (long)ft_atoi(arguments[i]);
+		a = (long)ft_atoi(arguments[i]); // Can I re-cast it into long from int ? Or rewrite the function by returnung long instead of ints ?
 		if (a  > INT_MAX || a < INT_MIN)
 			free(a);
 		//dublication check 
 		append_node(a, (int)a);
 	}
 	
+}
+void append_node(t_stack_node **stack, int n)
+{
+	t_stack_node	*node;
+	t_stack_node	*last_node;
+
+	if(!stack)
+		return;
+	node = malloc(sizeof(t_stack_node));
+	if(!node)
+		return;
+	node->next = NULL;
+	node->nbr = n;
+	node->cheapest = 0;
+	if(!(*stack))
+	{
+		*stack = node;
+		node->prev = NULL;
+	}
+	else
+	{
+		last_node = find_last(*stack);
+		last_node->next = node;
+		node->prev = last_node;
+	}
 }
 
 int stack_shorted(t_stack_node *a)
