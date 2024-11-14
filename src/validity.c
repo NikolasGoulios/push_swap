@@ -6,16 +6,16 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:23:29 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/13 23:31:48 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/14 19:26:28 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_dublicate(t_stack_node *a)
+int	is_stack_dublicate(t_node *a)
 {
-	t_stack_node	*current;
-	t_stack_node	*indexing;
+	t_node	*current;
+	t_node	*indexing;
 	
 	current = a;
 	if(!current)
@@ -33,9 +33,9 @@ int	stack_dublicate(t_stack_node *a)
 	return (0);
 }
 
-int stack_shorted(t_stack_node *a)
+int is_stack_ordered(t_node *a)
 {
-	t_stack_node	*current;
+	t_node	*current;
 
 	current = a;
 	if(!current)

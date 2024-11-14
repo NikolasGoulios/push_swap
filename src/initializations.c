@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   initializations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 14:51:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/14 20:48:09 by ngoulios         ###   ########.fr       */
+/*   Created: 2024/11/14 17:28:45 by ngoulios          #+#    #+#             */
+/*   Updated: 2024/11/14 20:28:55 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+void	short_initialize(t_node **a, t_node *b)
 {
-	t_node	*a;
-	t_node	*b;
-	char			**updated_args;
-
-	a = NULL;
-	b = NULL;
-	updated_args = NULL;
-	updated_args = parsing_arguments(argc, argv);
-	if (!updated_args)
-		return 1;
-	init_stack_a(&a, updated_args);
-	if (is_stack_dublicate(a))
-		return (1);
-	if(!is_stack_ordered(a))
-		short_initialize(&a, b);
-	free_stack(&a);
-	return (0);
+	int	n;
+	
+	(void)b;
+	n = ft_stacksize(*a);
+	if (n == 1)
+		return ;
+	else if (n == 2)
+		sa(a);
 }

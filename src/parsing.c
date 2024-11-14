@@ -6,11 +6,11 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:21:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/13 22:38:58 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/14 20:59:06 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 // A function to check the validity of the arguments 
 char  **parsing_arguments(int argc, char **argv)
@@ -19,25 +19,30 @@ char  **parsing_arguments(int argc, char **argv)
 	int		i;
 	
 	i = 1;
-	// How to parse the arguments? 
+	av_arr = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
+		return (NULL);
 	else if (argc == 2)
 	{
-		argv = ft_split(argv[1], ' ');
-		if (!argv)
-			return (ft_printf("Memory allocation Failed , Split"));
+		av_arr = ft_split(argv[1], ' ');
+		if (!av_arr)
+			return (NULL);
 	}
 	else 
 	{
-		av_arr = malloc(sizeof(char *) * argc);
+		av_arr = malloc(sizeof(char *) * (argc));
 		if (!av_arr)
 			return (NULL);
-		while (i < argc - 1)
+		while (i < argc)
 		{
-			av_arr[i] = ft_strdup(argv[i]); //strdup will handle the NULL cases and the allocation fails
-			if (!av_arr[i])
+			av_arr[i - 1] = ft_strdup(argv[i]);
+			if (!av_arr[i - 1])
+			{
+				while (--i >= 1)
+					free(av_arr[i - 1]);
+				free(av_arr);
 				return (NULL); //Allocation from strdup add a printf to inform the cindition of the allocation
+			}
 			i++;
 		}
 		av_arr[i] = NULL;
