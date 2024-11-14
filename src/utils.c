@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 19:23:22 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/14 20:27:32 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/14 22:09:48 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,20 @@ long	ft_atol(const char *str)
 
 t_node *find_last(t_node *last_node)
 {
-	if (last_node)
+	if (!last_node){
+		printf("Error: Stack is empty in find_last\n");
 		return (NULL);
-	while (last_node->next)
+	}
+	while (last_node->next){
+		printf("Traversing node: %d\n", last_node->nbr);
 		last_node = last_node->next;
+	}
+	printf("Last node found: %d\n", last_node->nbr);
 	return (last_node);
 }
 
 // Example implementation
-int	ft_stacksize(t_node *stack) 
+/*int	ft_stacksize(t_node *stack)
 {  
 	int size;
 	
@@ -77,4 +82,29 @@ int	ft_stacksize(t_node *stack)
 		stack = stack->next;
     }
     return (size);
+}*/
+
+int ft_stacksize(t_node *stack)
+{
+    int size = 0;
+
+    while (stack)
+    {
+        size++;
+        printf("Counting node: %d\n", stack->nbr); // Debug print
+        stack = stack->next;
+    }
+    printf("Total stack size: %d\n", size);
+    return size;
 }
+
+
+void print_stack(t_node *stack)
+{
+    while (stack)
+    {
+        printf("Node debug from print_stack function: %d\n", stack->nbr);
+        stack = stack->next;
+    }
+}
+
