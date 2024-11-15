@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 19:23:22 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/15 19:27:51 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/15 23:03:21 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,36 +25,6 @@ int		ft_last_nodesize(t_node **a)
 		index++;
 	}
 	return (index);
-}
-
-long	ft_atol(const char *str)
-{
-	// Add it to Libft baby, its a nice function
-	long	results;
-	long	sign;
-	int		i;
-
-	results = 0;
-	sign = 1;
-	i = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		results = results * 10 + (str[i] - '0');
-		if (results * sign > LONG_MAX)
-			return (-1);
-		if (results * sign < LONG_MIN)
-			return (0);
-		i++;
-	}
-	return (results * sign);
 }
 
 t_node *find_last(t_node *last_node)

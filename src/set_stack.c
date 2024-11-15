@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:37:53 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/14 21:57:06 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/15 22:58:23 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ void init_stack_a(t_node **a, char **arguments)
 	i = 0;
 	if(!a)
 		return;
-	printf("Initializing stack...\n");
+	printf("[SET STACK]: Initializing stack...\n");
 	while (arguments && arguments[i])
 	{
-		printf("Parsing argument: %s\n", arguments[i]);
+		printf("[SET STACK]: Parsing argument: %s\n", arguments[i]);
 		num = ft_atol(arguments[i]);
 		if (num == -1 || num == 0)
 		{
-			printf("Error: Invalid number %ld\n", num);
+			printf("[SET STACK / Error]: Invalid number %ld\n", num);
 			error_indicator(a);
 			return;
 		}
 		//dublication check 
 		append_node(a, num);
-		printf("Added %ld to the stack\n", num);
+		printf("[SET STACK]: Added %ld to the stack\n", num);
 		i++;
 	}
 	
@@ -48,12 +48,12 @@ static void	append_node(t_node **stack, long n)
 	t_node	*last_node;
 
 	if(!stack){
-		printf("Error: Stack pointer is NULL\n");
+		printf("[SET STACK / Error]: Stack pointer is NULL\n");
 		return;
 	}
 	node = malloc(sizeof(t_node));
 	if(!node){
-		printf("Error: malloc failed for new node\n");
+		printf("[SET STACK / Error]: malloc failed for new node\n");
 		return;
 	}
 	node->next = NULL;
@@ -61,7 +61,7 @@ static void	append_node(t_node **stack, long n)
 	node->cheapest = 0;
 	if(!(*stack))
 	{
-		printf("Appending as the first node\n");
+		printf("[SET STACK]: Appending as the first node\n");
 		*stack = node;
 		node->prev = NULL;
 	}
@@ -70,11 +70,11 @@ static void	append_node(t_node **stack, long n)
 		last_node = find_last(*stack);
 		if (!last_node)
 		{
-			printf("Error: find_last returned NULL\n");
+			printf("[SET STACK / Error]: find_last returned NULL\n");
 			free(node);
 			return;
 		}
-		printf("Appending %ld after %d\n", n, last_node->nbr);
+		printf("[SET STACK]: Appending %ld after %d\n", n, last_node->nbr);
 		last_node->next = node;
 		node->prev = last_node;
 	}

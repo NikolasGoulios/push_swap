@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/15 19:28:10 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/15 23:03:33 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int		is_stack_ordered(t_node *a);
 
 // Stack Utils
 int		ft_stacksize(t_node *a);
-long	ft_atol(const char *str);
 t_node	*find_last(t_node *last_node);
 t_node	*find_max(t_node *a);
 
