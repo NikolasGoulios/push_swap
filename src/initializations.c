@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:28:45 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/14 22:21:15 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/15 19:04:20 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 	
 	(void)b;
 	n = ft_stacksize(*a);
-	printf("Stack size: %d\n", n);
 	if (n == 1)
 		return ;
-	else if (n == 2){
-		printf("Swapping nodes %d and %d\n", (*a)->nbr, (*a)->next->nbr);
+	else if (n == 2)
 		sa(a);
 	}
 }*/
-void short_initialize(t_node **a, t_node *b) //debug from chatgtp cause I am bugging my brain
+
+
+void	short_initialize(t_node **a, t_node *b) //debug from chatgtp cause I am bugging my brain
 {
 	printf("Entering short_initialize\n");
     int n;
@@ -38,7 +38,7 @@ void short_initialize(t_node **a, t_node *b) //debug from chatgtp cause I am bug
     if (n == 2)
     {
         printf("Node 1: %d, Node 2: %d\n", (*a)->nbr, (*a)->next->nbr);
-        if ((*a)->nbr > (*a)->next->nbr)
+        if (!is_stack_ordered(*a))
         {
             printf("Condition met for sa: %d > %d\n", (*a)->nbr, (*a)->next->nbr);
             sa(a);
@@ -48,10 +48,25 @@ void short_initialize(t_node **a, t_node *b) //debug from chatgtp cause I am bug
             printf("Condition not met: %d <= %d\n", (*a)->nbr, (*a)->next->nbr);
         }
     }
+    else if (n == 3)
+   {
+        printf("Stack has 3 nodes. Performing sort_three...\n");
+
+        if (!is_stack_ordered(*a))
+        {
+            sort_three(a); // Call a function to handle sorting for 3 nodes
+            printf("sort_three executed\n");
+        }
+        else
+        {
+            printf("Stack is already ordered\n");
+        }
+    }
     else
     {
-        printf("Stack size is not 2, skipping sa\n");
+        printf("Unexpected stack size in short_initialize: %d\n", n);
     }
 }
+
 
 

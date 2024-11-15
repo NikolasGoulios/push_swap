@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/14 21:53:18 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/15 19:28:10 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,23 @@ int		is_stack_ordered(t_node *a);
 int		ft_stacksize(t_node *a);
 long	ft_atol(const char *str);
 t_node	*find_last(t_node *last_node);
+t_node	*find_max(t_node *a);
+
+// Debugg
 void print_stack(t_node *stack); //Debug
+void validate_stack(t_node *stack);
 
 //Commands Functions
+void	sort_three(t_node **a);
 void	swap(t_node **head);
 void	sa(t_node **a);
+void	rotate(t_node **stack);
+void	rev_rotate(t_node **stack);
+void	ra(t_node **a);
+void	rb(t_node **b);
+void	rr(t_node **a, t_node **b);
+void	rra(t_node **a);
+void	rrb(t_node **b);
+void	rrr(t_node **a, t_node **b);
 
 #endif

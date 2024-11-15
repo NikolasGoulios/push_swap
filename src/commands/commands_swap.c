@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 00:05:53 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/14 22:10:10 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/15 19:05:50 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,17 @@ void	sa(t_node **a)
 	ft_printf("sa\n");
 }
 
+void	sort_three(t_node **a)
+{
+	printf("Calling sort_three function\n");
+	t_node	*biggest_node;
+
+	biggest_node = find_max(*a);
+	if (biggest_node == *a)
+		ra(a);
+	else if ((*a)->next == biggest_node)
+		rra(a);
+	if ((*a)->nbr > (*a)->next->nbr)
+		sa(a);
+}
 // next swaping commands for 2 and three and then the turk algorithm

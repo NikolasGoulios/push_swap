@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 19:23:22 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/14 22:09:48 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/15 19:27:51 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_last_nodesize(t_node **a)
 
 long	ft_atol(const char *str)
 {
+	// Add it to Libft baby, its a nice function
 	long	results;
 	long	sign;
 	int		i;
@@ -70,20 +71,6 @@ t_node *find_last(t_node *last_node)
 	return (last_node);
 }
 
-// Example implementation
-/*int	ft_stacksize(t_node *stack)
-{  
-	int size;
-	
-	size = 0;
-    while (stack) 
-	{
-        size++;
-		stack = stack->next;
-    }
-    return (size);
-}*/
-
 int ft_stacksize(t_node *stack)
 {
     int size = 0;
@@ -108,3 +95,37 @@ void print_stack(t_node *stack)
     }
 }
 
+t_node	*find_max(t_node *a)
+{
+	t_node *max;
+
+	max = a;
+	while (a)
+	{
+		if (a->nbr > max->nbr)
+			max = a;
+		a = a->next;
+	}
+	return (max);
+}
+
+void validate_stack(t_node *stack)
+{
+    t_node *current = stack;
+    int counter = 0;
+
+    printf("Validating stack...\n");
+    while (current)
+    {
+        printf("Node: %d\n", current->nbr);
+        current = current->next;
+
+        counter++;
+        if (counter > 100) // Arbitrary limit to detect infinite loops
+        {
+            printf("Error: Circular reference detected in stack\n");
+            return;
+        }
+    }
+    printf("Stack validation passed\n");
+}
