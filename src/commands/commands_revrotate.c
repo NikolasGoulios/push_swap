@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:50:38 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/15 18:54:14 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:21:14 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rev_rotate(t_node **stack)
 	t_node	*last;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	last = find_last(*stack);
 	last->prev->next = NULL;
 	last->next = *stack;
@@ -26,21 +26,21 @@ void	rev_rotate(t_node **stack)
 	*stack = last;
 }
 
-void rra(t_node **a)
+void	rra(t_node **a)
 {
-    rev_rotate(a);
-    ft_printf("rra\n");
+	rev_rotate(a);
+	ft_printf("rra\n");
 }
 
-void rrb(t_node **b)
+void	rrb(t_node **b)
 {
-    rev_rotate(b);
-    ft_printf("rrb\n");
+	rev_rotate(b);
+	ft_printf("rrb\n");
 }
 
-void rrr(t_node **a, t_node **b)
+void	rrr(t_node **a, t_node **b)
 {
-    rev_rotate(a);
-    rev_rotate(b);
-    ft_printf("rrr\n");
+	rev_rotate(a);
+	rev_rotate(b);
+	ft_printf("rrr\n");
 }

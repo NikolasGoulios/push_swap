@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:08:33 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/15 19:32:24 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:21:35 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,23 @@ void	rotate(t_node **stack)
 	t_node	*last_node;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	last_node = find_last(*stack);
-	 if (last_node == *stack)
-    {
-        printf("Error: Circular reference detected in rotate\n");
-        return;
-    }
+	if (last_node == *stack)
+	{
+		printf("Error: Circular reference detected in rotate\n");
+		return ;
+	}
 	last_node->next = *stack;
 	(*stack)->prev = last_node;
 	*stack = (*stack)->next;
-	(*stack)->prev = NULL;	
+	(*stack)->prev = NULL;
 	last_node->next->next = NULL;
 }
 
 void	ra(t_node **a)
 {
-	//consider adding the print flag to ensure no repeatable rotations
+	// consider adding the print flag to ensure no repeatable rotations
 	rotate(a);
 	ft_printf("ra\n");
 	validate_stack(*a); // Validate stack after rotation
