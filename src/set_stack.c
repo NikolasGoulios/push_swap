@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:37:53 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/15 22:58:23 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:26:02 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ void init_stack_a(t_node **a, char **arguments)
 	// Initialize and store the arguments after that being checked and being parsed
 	long	num;
 	int 	i;
-
+	int 	flag;
+	
 	i = 0;
+	flag = 0;
 	if(!a)
 		return;
 	printf("[SET STACK]: Initializing stack...\n");
@@ -28,7 +30,7 @@ void init_stack_a(t_node **a, char **arguments)
 	{
 		printf("[SET STACK]: Parsing argument: %s\n", arguments[i]);
 		num = ft_atol(arguments[i]);
-		if (num == -1 || num == 0)
+		if (num > INT_MAX || num < INT_MIN)
 		{
 			printf("[SET STACK / Error]: Invalid number %ld\n", num);
 			error_indicator(a);

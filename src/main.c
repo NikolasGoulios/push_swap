@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:51:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/16 16:22:06 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:31:23 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	if (!is_stack_ordered(a))
 	{
 		printf("[MAIN]:Stack is not ordered, calling short_initialize...\n");
-		short_initialize(&a, b);
+		short_initialize(&a, &b);
 	}
 	else
 		printf("[MAIN]: Stack is already ordered\n");

@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/15 23:03:33 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/16 18:44:26 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ char 	**parsing_arguments(int argc, char **argv);
 
 // Stack initiation
 void	init_stack_a(t_node **a, char **arguments);
-void	short_initialize(t_node **a, t_node *b);
+void	short_initialize(t_node **a, t_node **b);
+void	sort_turk(t_node **a, t_node **b, int size);
 
 // Nodes initiation
 int		is_stack_dublicate(t_node *a);
@@ -57,6 +58,7 @@ void print_stack(t_node *stack); //Debug
 void validate_stack(t_node *stack);
 
 //Commands Functions
+void	push(t_node **src, t_node **dst);
 void	sort_three(t_node **a);
 void	swap(t_node **head);
 void	sa(t_node **a);
@@ -68,5 +70,8 @@ void	rr(t_node **a, t_node **b);
 void	rra(t_node **a);
 void	rrb(t_node **b);
 void	rrr(t_node **a, t_node **b);
+void	pa(t_node **a, t_node **b);
+void	pb(t_node **b, t_node **a);
+
 
 #endif
