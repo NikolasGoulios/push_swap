@@ -6,20 +6,20 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:28:32 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/16 18:56:13 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/16 20:21:28 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate_both(t_node **a, t_node **b, t_node *cheapest_node);
-static void	rev_rotate_both(t_node **a, t_node **b, t_node *cheapest_node);
+static void	execute_rotations(t_node **a, t_node **b, t_node *cheapest_node,
+				int i);
+static void	rotate_stacks(t_node **a, t_node **b, t_node *cheapest_node, int i);
 static void	move_a_to_b(t_node **a, t_node **b);
 static void	move_b_to_a(t_node **a, t_node **b);
 
 void	sort_turk(t_node **a, t_node **b, int size)
 {
-	printf("[TURK]: Turk Logic initialized");
 	if (size-- > 3 && !is_stack_ordered(*a))
 		pb(b, a);
 	if (size-- > 3 && !is_stack_ordered(*a))
@@ -51,27 +51,50 @@ static void	move_a_to_b(t_node **a, t_node **b)
 
 	cheapest_node = get_cheapest(*a);
 	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
-		rotate_both(a, b, cheapest_node);
+		rotate_stacks(a, b, cheapest_node, FORWARD);
 	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target_node->above_median))
-		rev_rotate_both(a, b, cheapest_node);
+		rotate_stacks(a, b, cheapest_node, REVERSE);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');
 	pb(b, a);
 }
 
-static void	rev_rotate_both(t_node **a, t_node **b, t_node *cheapest_node)
+static void	rotate_stacks(t_node **a, t_node **b, t_node *cheapest_node,
+		int direction)
 {
-	while (*b != cheapest_node->target_node && *a != cheapest_node)
-		rrr(a, b);
+	if (!a || !b)
+		return ;
+	execute_rotations(a, b, cheapest_node, direction);
 	current_index(*a);
 	current_index(*b);
 }
 
-static void	rotate_both(t_node **a, t_node **b, t_node *cheapest_node)
+static void	execute_rotations(t_node **a, t_node **b, t_node *cheapest_node,
+		int direction)
 {
-	while (*b != cheapest_node->target_node && *a != cheapest_node)
-		rr(a, b);
-	current_index(*a);
-	current_index(*b);
+	while (*b != cheapest_node->target_node || *a != cheapest_node)
+	{
+		if (*b != cheapest_node->target_node && *a != cheapest_node)
+		{
+			if (direction == FORWARD)
+				rr(a, b); // Forward rotate both
+			else
+				rrr(a, b); // Reverse rotate both
+		}
+		else if (*b != cheapest_node->target_node)
+		{
+			if (direction == FORWARD)
+				rb(b); // Forward rotate b
+			else
+				rrb(b); // Reverse rotate b
+		}
+		else
+		{
+			if (direction == FORWARD)
+				ra(a); // Forward rotate a
+			else
+				rra(a); // Reverse rotate a
+		}
+	}
 }

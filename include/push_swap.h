@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/16 18:44:26 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/16 20:39:34 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <../lib/libft/libft.h>
+
+# define FORWARD 1
+# define REVERSE 0
 
 
 // Dexa Comments to the functions for Github and different for Vogsphare causse Norminette 
@@ -41,7 +44,7 @@ char 	**parsing_arguments(int argc, char **argv);
 
 // Stack initiation
 void	init_stack_a(t_node **a, char **arguments);
-void	short_initialize(t_node **a, t_node **b);
+void	sort_fine_tuning(t_node **a, t_node **b);
 void	sort_turk(t_node **a, t_node **b, int size);
 
 // Nodes initiation
