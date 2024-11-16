@@ -12,26 +12,24 @@
 
 #include "push_swap.h"
 
-void free_stack(t_node **stack)
+void	free_stack(t_node **stack)
 {
-    t_node *tmp;
-    t_node *current;
+	t_node	*tmp;
+	t_node	*current;
 
-    if (!stack || !(*stack)) // Check both stack pointer and head
-        return;
-
-    current = *stack;
-    while (current)
-    {
-        tmp = current->next;
-        printf("[FREE]: Freeing node: %d\n", current->nbr); // Debug print
-        free(current);
-        current = tmp;
-    }
-    *stack = NULL;
-    printf("[FREE]:Stack successfully freed\n");
+	if (!stack || !(*stack)) // Check both stack pointer and head
+		return ;
+	current = *stack;
+	while (current)
+	{
+		tmp = current->next;
+		printf("[FREE]: Freeing node: %d\n", current->nbr); // Debug print
+		free(current);
+		current = tmp;
+	}
+	*stack = NULL;
+	printf("[FREE]:Stack successfully freed\n");
 }
-
 
 void	error_indicator(t_node **a)
 {
