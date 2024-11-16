@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   commands_push.c                                    :+:      :+:    :+:   */
+/*   cmd_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:31:54 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/16 18:31:43 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/17 00:41:57 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	push(t_node **src, t_node **dst)
 {
 	t_node	*pushed_node;
-	
+
 	pushed_node = NULL;
 	if (!*src)
-		return;
+		return ;
 	*src = (*src)->next;
 	if (*src)
 		(*src)->prev = NULL;
@@ -28,12 +28,12 @@ void	push(t_node **src, t_node **dst)
 		*dst = pushed_node;
 		pushed_node->next = NULL;
 	}
-	else 
+	else
 	{
 		pushed_node->next = *dst;
 		pushed_node->next->prev = pushed_node;
 		*dst = pushed_node;
-	}	
+	}
 }
 
 void	pa(t_node **a, t_node **b)
