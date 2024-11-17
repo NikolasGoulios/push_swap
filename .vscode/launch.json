@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Push_Swap",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/ngoulios/Core/GitHub/push_swap/push_swap",
+            "args": ["6", "3", "2", "66", "13", "664", "321", "1"], // Add command-line arguments if needed
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb", // Use "lldb" if you're on macOS
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build Push_Swap"
+        }
+    ]
+}

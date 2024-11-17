@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 19:23:22 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/16 20:46:21 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 00:10:52 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ t_node	*find_last(t_node *last_node)
 	return (last_node);
 }
 
-int	ft_stacksize(t_node *stack)
+int	stack_size(t_node *stack)
 {
 	int	size;
 
 	size = 0;
+	if (!stack)
+		return (0);
 	while (stack)
 	{
 		size++;
@@ -65,4 +67,22 @@ t_node	*find_max(t_node *a)
 	return (max);
 }
 
+t_node	*find_min(t_node *stack)
+{
+	long	min;
+	t_node	*min_node;
 
+	if (!stack)
+		return (NULL);
+	min = LONG_MAX;
+	while (stack)
+	{
+		if (stack->nbr < min)
+		{
+			min = stack->nbr;
+			min_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (min_node);
+}

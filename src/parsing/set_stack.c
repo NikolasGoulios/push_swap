@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:37:53 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/16 20:18:13 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 01:30:16 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ void	init_stack_a(t_node **a, char **arguments)
 {
 	long	num;
 	int		i;
-	int		flag;
 
 	// Initialize and store the arguments after that being checked and being parsed
 	i = 0;
-	flag = 0;
 	if (!a)
 		return ;
 	while (arguments && arguments[i])
@@ -38,7 +36,6 @@ void	init_stack_a(t_node **a, char **arguments)
 		i++;
 	}
 }
-
 static void	append_node(t_node **stack, long n)
 {
 	t_node	*node;

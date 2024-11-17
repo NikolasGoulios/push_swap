@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shorting.c                                         :+:      :+:    :+:   */
+/*   alg_shorting.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:28:32 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/16 23:13:52 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 00:24:50 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	sort_turk(t_node **a, t_node **b, int size)
 		pb(b, a);
 	while (size-- > 3 && !is_stack_ordered(*a))
 	{
-		init_stack_a(*a, *b);
+		init_nodes_a(*a, *b);
 		move_a_to_b(a, b);
 	}
 	sort_three(a);
 	while (*b)
 	{
-		init_stack_b(*a, *b);
+		init_nodes_b(*a, *b);
 		move_b_to_a(a, b);
 	}
 	current_index(*a);

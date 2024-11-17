@@ -1,42 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alg_utils.c                                        :+:      :+:    :+:   */
+/*   alg_tools.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/16 23:36:11 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 00:20:13 by ngoulios         ###   ########.fr       */
+/*   Created: 2024/11/18 00:00:36 by ngoulios          #+#    #+#             */
+/*   Updated: 2024/11/18 00:32:54 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*get_cheapest(t_node *stack)
+void	current_index(t_node *stack)
 {
+	int	i;
+	int	median;
+
+	i = 0;
 	if (!stack)
-		return (NULL);
+		return ;
+	median = stack_size(stack);
 	while (stack)
 	{
-		if (stack->cheapest)
-			return (stack);
+		stack->index = i;
+		if (i <= median)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
 		stack = stack->next;
+		++i;
 	}
-	return (NULL);
 }
 
-int	node_exists_in_stack(t_node *stack, t_node *target_node)
+void	set_cheapest(t_node *stack)
 {
+	long	cheapest_value;
+	t_node	*cheapest_node;
+
+	if (!stack)
+		return ;
+	cheapest_value = LONG_MAX;
 	while (stack)
 	{
-		if (stack == target_node)
-			return (1);
+		if (stack->push_cost < cheapest_value)
+		{
+			cheapest_value = stack->push_cost;
+			cheapest_node = stack;
+		}
 		stack = stack->next;
 	}
-	return (0);
+	cheapest_node->cheapest = true;
 }
 
-void	rotate_to_top(t_node **stack, t_node *top_node, char stack_name)
+
+void	prep_for_push(t_node **stack, t_node *top_node, char stack_name)
 {
 	while (*stack != top_node)
 	{
@@ -53,25 +71,6 @@ void	rotate_to_top(t_node **stack, t_node *top_node, char stack_name)
 				rb(stack);
 			else
 				rrb(stack);
-		}
-	}
-}
-void	prep_push(t_node **stack, t_node *top_node, char stack_name)
-{
-	if (!stack || !*stack || !top_node)
-		return ;
-	if (!node_exists_in_stack(*stack, top_node))
-		return ;
-	rotate_to_top(stack, top_node, stack_name);
-}
-
-void	min_on_top(t_node **a)
-{
-	while ((*a)->nbr != find_min(*a)->nbr)
-	{
-		if (find_min(*a)->above_median)
-			ra(a);
-		else
-			rra(a);
+		}	
 	}
 }
