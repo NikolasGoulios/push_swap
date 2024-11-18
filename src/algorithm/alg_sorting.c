@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alg_shorting.c                                     :+:      :+:    :+:   */
+/*   alg_sorting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:28:32 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 05:05:05 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 06:44:31 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	move_b_to_a(t_node **a, t_node **b);
 
 void	sort_turk(t_node **a, t_node **b, int size)
 {
-	if (!a || !b)
+	if (!*a || !*b)
 		return ;
 	if (size-- > 3 && !is_stack_ordered(*a))
 		pb(b, a);
@@ -74,35 +74,4 @@ static void	rotate_stacks(t_node **a, t_node **b, t_node *cheapest_node,
 	execute_rotations(a, b, cheapest_node, direction);
 	current_index(*a);
 	current_index(*b);
-}
-
-static void	execute_rotations(t_node **a, t_node **b, t_node *cheapest_node,
-		int direction)
-{
-	if (!cheapest_node || !cheapest_node->target_node)
-		return ;
-	while (*b != cheapest_node->target_node || *a != cheapest_node)
-	{
-		if (*b != cheapest_node->target_node && *a != cheapest_node)
-		{
-			if (direction == FORWARD)
-				rr(a, b);
-			else
-				rrr(a, b);
-		}
-		else if (*b != cheapest_node->target_node)
-		{
-			if (direction == FORWARD)
-				rb(b);
-			else
-				rrb(b);
-		}
-		else
-		{
-			if (direction == FORWARD)
-				ra(a);
-			else
-				rra(a);
-		}
-	}
 }

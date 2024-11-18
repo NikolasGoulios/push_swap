@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 05:14:12 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 06:45:38 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_node
 // Error Handling
 void				free_stack(t_node **stack);
 void				error_indicator(t_node **a);
+void				free_args(char **updated_args);
 char				**parsing_arguments(int argc, char **argv);
 
 // Stack initiation
@@ -61,8 +62,8 @@ void				min_on_top(t_node **a);
 void				init_nodes_a(t_node *a, t_node *b);
 void				init_nodes_b(t_node *a, t_node *b);
 void				min_on_top(t_node **stack);
-
-
+void				execute_rotations(t_node **a, t_node **b,
+						t_node *cheapest_node, int direction);
 
 // Debugging
 void				validate_stack(t_node *stack);

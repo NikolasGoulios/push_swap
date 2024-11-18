@@ -6,47 +6,59 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:21:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 05:03:20 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 06:33:30 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// A function to check the validity of the arguments
+static char	**split_single_argument(char *arg);
+static char	**split_multiple_arguments(int argc, char **argv);
+
 char	**parsing_arguments(int argc, char **argv)
+{
+	char	**av_arr;
+
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (NULL);
+	else if (argc == 2)
+		av_arr = split_single_argument(argv[1]);
+	else
+		av_arr = split_multiple_arguments(argc, argv);
+	return (av_arr);
+}
+
+static char	**split_single_argument(char *arg)
+{
+	char	**av_arr;
+
+	av_arr = ft_split(arg, ' ');
+	if (!av_arr)
+		return (NULL);
+	return (av_arr);
+}
+
+static char	**split_multiple_arguments(int argc, char **argv)
 {
 	char	**av_arr;
 	int		i;
 
-	i = 1;
-	av_arr = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	av_arr = ft_calloc(argc, sizeof(char *));
+	if (!av_arr)
 		return (NULL);
-	else if (argc == 2)
+	i = 1;
+	while (i < argc)
 	{
-		av_arr = ft_split(argv[1], ' ');
-		if (!av_arr)
-			return (NULL);
-	}
-	else
-	{
-		av_arr = ft_calloc(argc, sizeof(char *));
-		if (!av_arr)
-			return (NULL);
-		while (i < argc)
+		av_arr[i - 1] = ft_strdup(argv[i]);
+		if (!av_arr[i - 1])
 		{
-			av_arr[i - 1] = ft_strdup(argv[i]);
-			if (!av_arr[i - 1])
-			{
-				while (--i >= 1)
-					free(av_arr[i - 1]);
-				free(av_arr);
-				return (NULL);
-					// Allocation from strdup add a printf to inform the cindition of the allocation
-			}
-			i++;
+			while (--i >= 1)
+				free(av_arr[i - 1]);
+			free(av_arr);
+			return (NULL);
 		}
-		av_arr[argc - 1] = NULL;
+		i++;
 	}
+	av_arr[argc - 1] = NULL;
 	return (av_arr);
 }

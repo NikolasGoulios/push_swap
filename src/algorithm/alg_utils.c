@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 23:36:11 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 00:20:13 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 06:36:32 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	rotate_to_top(t_node **stack, t_node *top_node, char stack_name)
 		}
 	}
 }
+
 void	prep_push(t_node **stack, t_node *top_node, char stack_name)
 {
 	if (!stack || !*stack || !top_node)
