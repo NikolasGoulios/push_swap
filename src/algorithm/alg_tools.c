@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 00:00:36 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 01:56:23 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:07:21 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,12 @@ void	set_cheapest(t_node *stack)
 	cheapest_node->cheapest = true;
 }
 
-
 void	prep_for_push(t_node **stack, t_node *top_node, char stack_name)
 {
 	if (!stack || !*stack || !top_node)
-	{
-   		printf("[ERROR]: Invalid stack or top_node\n");
-    	return;
-	}
+		return ;
 	if (*stack == top_node)
-    	return;
+		return ;
 	while (*stack != top_node)
 	{
 		if (stack_name == 'a')
@@ -78,6 +74,6 @@ void	prep_for_push(t_node **stack, t_node *top_node, char stack_name)
 				rb(stack);
 			else
 				rrb(stack);
-		}	
+		}
 	}
 }

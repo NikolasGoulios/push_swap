@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:51:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 03:59:25 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:14:23 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ int	main(int argc, char **argv)
 	}
 	else
 		printf("[MAIN]: Stack is already ordered\n");
-	free_stack(&a);
-	free_stack(&b);
+	if (a)
+		free_stack(&a);
+	if (b)
+		free_stack(&b);
 	// Free memory allocated in parsing_arguments
 	for (int i = 0; updated_args[i]; i++)
 		free(updated_args[i]);

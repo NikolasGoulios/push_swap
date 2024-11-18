@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 19:23:22 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 02:16:58 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:15:36 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,17 @@ t_node	*find_last(t_node *last_node)
 	return (last_node);
 }
 
-int stack_size(t_node *stack)
+int	stack_size(t_node *stack)
 {
-    int size = 0;
+	int	size;
 
-    while (stack)
-    {
-        printf("[DEBUG]: Counting node with value: %d\n", stack->nbr);
-        size++;
-        stack = stack->next;
-    }
-    printf("[DEBUG]: Final stack size: %d\n", size);
-    return size;
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }
 
 t_node	*find_max(t_node *a)

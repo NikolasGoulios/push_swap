@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:08:33 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/16 23:38:05 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:11:31 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ void	rotate(t_node **stack)
 
 void	ra(t_node **a)
 {
-	// consider adding the print flag to ensure no repeatable rotations
 	rotate(a);
 	ft_printf("ra\n");
-	validate_stack(*a); // Validate stack after rotation
+	validate_stack(*a);
 }
 
 void	rb(t_node **b)

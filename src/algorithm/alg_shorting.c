@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:28:32 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 02:04:18 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:05:05 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,11 @@ static void	move_b_to_a(t_node **a, t_node **b);
 void	sort_turk(t_node **a, t_node **b, int size)
 {
 	if (!a || !b)
-	{
-    	printf("[ERROR]: Invalid stacks\n");
-    	return;
-	}
-	printf("[DEBUG]: Before pb, stack A size: %d\n", stack_size(*a));
+		return ;
 	if (size-- > 3 && !is_stack_ordered(*a))
 		pb(b, a);
-	printf("[DEBUG]: After pb, stack A size: %d\n", stack_size(*a));
 	if (size-- > 3 && !is_stack_ordered(*a))
 		pb(b, a);
-	printf("[DEBUG]: After pb, stack A size: %d\n", stack_size(*a));
 	while (size-- > 3 && !is_stack_ordered(*a))
 	{
 		init_nodes_a(*a, *b);
@@ -50,10 +44,7 @@ void	sort_turk(t_node **a, t_node **b, int size)
 static void	move_b_to_a(t_node **a, t_node **b)
 {
 	if (!*b || !(*b)->target_node)
-	{
-    	printf("[ERROR]: Invalid target node in stack B\n");
-    	return;
-	}
+		return ;
 	prep_for_push(a, (*b)->target_node, 'a');
 	pa(a, b);
 }
@@ -64,10 +55,7 @@ static void	move_a_to_b(t_node **a, t_node **b)
 
 	cheapest_node = get_cheapest(*a);
 	if (!cheapest_node || !cheapest_node->target_node)
-	{
-    	printf("[ERROR]: Invalid cheapest node or target node\n");
-    	return;
-	}
+		return ;
 	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
 		rotate_stacks(a, b, cheapest_node, FORWARD);
 	else if (!(cheapest_node->above_median)
@@ -82,10 +70,7 @@ static void	rotate_stacks(t_node **a, t_node **b, t_node *cheapest_node,
 		int direction)
 {
 	if (!a || !b || !cheapest_node)
-	{
-    	printf("[ERROR]: Invalid inputs to rotate_stacks\n");
-    	return;
-	}
+		return ;
 	execute_rotations(a, b, cheapest_node, direction);
 	current_index(*a);
 	current_index(*b);
@@ -95,10 +80,7 @@ static void	execute_rotations(t_node **a, t_node **b, t_node *cheapest_node,
 		int direction)
 {
 	if (!cheapest_node || !cheapest_node->target_node)
-	{
-    	printf("[ERROR]: Invalid nodes in execute_rotations\n");
-    	return;
-	}
+		return ;
 	while (*b != cheapest_node->target_node || *a != cheapest_node)
 	{
 		if (*b != cheapest_node->target_node && *a != cheapest_node)
@@ -107,7 +89,6 @@ static void	execute_rotations(t_node **a, t_node **b, t_node *cheapest_node,
 				rr(a, b);
 			else
 				rrr(a, b);
-			printf("[DEBUG]: Rotating stacks, cheapest_node: %d, target_node: %d\n", cheapest_node->nbr, cheapest_node->target_node->nbr);
 		}
 		else if (*b != cheapest_node->target_node)
 		{
@@ -115,7 +96,6 @@ static void	execute_rotations(t_node **a, t_node **b, t_node *cheapest_node,
 				rb(b);
 			else
 				rrb(b);
-			printf("[DEBUG]: Rotating stacks, cheapest_node: %d, target_node: %d\n", cheapest_node->nbr, cheapest_node->target_node->nbr);
 		}
 		else
 		{
@@ -123,7 +103,6 @@ static void	execute_rotations(t_node **a, t_node **b, t_node *cheapest_node,
 				ra(a);
 			else
 				rra(a);
-			printf("[DEBUG]: Rotating stacks, cheapest_node: %d, target_node: %d\n", cheapest_node->nbr, cheapest_node->target_node->nbr);
 		}
 	}
 }

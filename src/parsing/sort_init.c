@@ -18,9 +18,9 @@ void	sort_fine_tuning(t_node **a, t_node **b)
 
 	n = stack_size(*a);
 	if (n == 2 && !is_stack_ordered(*a))
-			sa(a);
+		sa(a);
 	else if (n == 3 && !is_stack_ordered(*a))
-			sort_three(a);
+		sort_three(a);
 	else
 		sort_turk(a, b, n);
 }

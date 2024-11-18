@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:41:37 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/15 22:56:06 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:15:04 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,21 @@
 
 void	free_stack(t_node **stack)
 {
-	t_node	*tmp;
-	t_node	*current;
+	t_node	*temp;
 
-	if (!stack || !(*stack)) // Check both stack pointer and head
+	if (!stack || !*stack)
 		return ;
-	current = *stack;
-	while (current)
+	while (*stack)
 	{
-		tmp = current->next;
-		printf("[FREE]: Freeing node: %d\n", current->nbr); // Debug print
-		free(current);
-		current = tmp;
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
 	}
 	*stack = NULL;
-	printf("[FREE]:Stack successfully freed\n");
 }
 
 void	error_indicator(t_node **a)
 {
 	free_stack(a);
-	ft_printf("[ERROR]: Define Nice errors in Header");
 	exit(1);
-	// or free and exit inside the free_stack function
 }
