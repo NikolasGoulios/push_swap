@@ -6,14 +6,12 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:28:32 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 06:44:31 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:46:42 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	execute_rotations(t_node **a, t_node **b, t_node *cheapest_node,
-				int i);
 static void	rotate_stacks(t_node **a, t_node **b, t_node *cheapest_node, int i);
 static void	move_a_to_b(t_node **a, t_node **b);
 static void	move_b_to_a(t_node **a, t_node **b);

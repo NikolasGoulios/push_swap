@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:23:29 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 05:17:14 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 20:02:55 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 int	is_stack_dublicate(t_node *a, long n)
 {
 	if (!a)
+	{
+		fprintf(stderr, "Error\n");
 		return (0);
+	}
 	while (a)
 	{
 		if (a->nbr == n)

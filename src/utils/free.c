@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:41:37 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 06:29:00 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 20:02:43 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	free_stack(t_node **stack)
 
 void	error_indicator(t_node **a)
 {
+	fprintf(stderr, "Error\n");
 	free_stack(a);
 	exit(1);
 }
