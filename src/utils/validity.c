@@ -6,31 +6,30 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:23:29 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/16 20:46:26 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 04:09:57 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_stack_dublicate(t_node *a)
+#include <stdlib.h>
+#include <stdio.h>
+#define HASH_SIZE 1000
+
+int is_stack_dublicate(t_node *a, long n)
 {
-	t_node	*current;
-	t_node	*indexing;
-	
-	current = a;
-	if(!current)
-		return (0);
-	while (current)
-	{
-		indexing = current->next;
-		while (indexing)
-		{
-			if (current->nbr == indexing->nbr)
-				return (1);
-			indexing = indexing->next;
-		}
-	}
-	return (0);
+    if (!a)
+        return (0);
+    while (a)
+    {
+        if (a->nbr == n)
+        {
+            printf("[DEBUG]: Duplicate value %ld found in stack\n", n);
+            return (1);
+        }
+        a = a->next;
+    }
+    return (0);
 }
 
 int is_stack_ordered(t_node *a)

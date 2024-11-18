@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 00:31:13 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 04:09:15 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void				prep_for_push(t_node **stack, t_node *top_node,
 						char stack_name);
 
 // Nodes initiation
-int					is_stack_dublicate(t_node *a);
+int					is_stack_dublicate(t_node *a, long num);
 int					is_stack_ordered(t_node *a);
 
 // Stack Utils
@@ -65,7 +65,7 @@ void				min_on_top(t_node **stack);
 
 
 // Debugging
-void				print_stack(t_node *stack);
+void print_stack(t_node *stack, const char *stack_name);
 void				validate_stack(t_node *stack);
 
 // Commands Functions

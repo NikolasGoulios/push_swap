@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 00:00:36 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 00:32:54 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/18 01:56:23 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,13 @@ void	set_cheapest(t_node *stack)
 
 void	prep_for_push(t_node **stack, t_node *top_node, char stack_name)
 {
+	if (!stack || !*stack || !top_node)
+	{
+   		printf("[ERROR]: Invalid stack or top_node\n");
+    	return;
+	}
+	if (*stack == top_node)
+    	return;
 	while (*stack != top_node)
 	{
 		if (stack_name == 'a')
