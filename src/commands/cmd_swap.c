@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 00:05:53 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 05:11:54 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/20 19:29:45 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,3 @@ void	sort_three(t_node **a)
 	if ((*a)->nbr > (*a)->next->nbr)
 		sa(a);
 }
-// next swaping commands for 2 and three and then the turk algorithm

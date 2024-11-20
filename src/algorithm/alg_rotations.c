@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 06:39:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 19:46:04 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/20 20:08:57 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,35 @@ void	execute_rotations(t_node **a, t_node **b, t_node *cheapest_node,
 static void	execute_double_rotation(t_node **a, t_node **b, int direction)
 {
 	if (direction == FORWARD)
+	{
 		rr(a, b);
+	}
 	else
+	{
 		rrr(a, b);
+	}
 }
 
 static void	execute_single_rotation_b(t_node **b, int direction)
 {
 	if (direction == FORWARD)
+	{
 		rb(b);
+	}
 	else
+	{
 		rrb(b);
+	}
 }
 
 static void	execute_single_rotation_a(t_node **a, int direction)
 {
 	if (direction == FORWARD)
+	{
 		ra(a);
+	}
 	else
+	{
 		rra(a);
+	}
 }

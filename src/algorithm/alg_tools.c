@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 00:00:36 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 05:07:21 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/20 20:16:09 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	current_index(t_node *stack)
 	i = 0;
 	if (!stack)
 		return ;
-	median = stack_size(stack);
+	median = stack_size(stack) / 2;
 	while (stack)
 	{
 		stack->index = i;
@@ -32,6 +32,24 @@ void	current_index(t_node *stack)
 		++i;
 	}
 }
+
+/*void current_index(t_node *stack)
+{
+    int i = 0;
+    int median = stack_size(stack) / 2; // Approximate median for simplicity
+
+    if (!stack)
+        return;
+
+    while (stack)
+    {
+        stack->index = i;
+        stack->above_median = (i <= median); // Example logic
+        stack = stack->next;
+        i++;
+    }
+}*/
+
 
 void	set_cheapest(t_node *stack)
 {
