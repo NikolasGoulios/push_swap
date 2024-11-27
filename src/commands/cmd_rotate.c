@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:08:33 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 05:11:31 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/11/21 21:01:52 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	ra(t_node **a)
 {
 	rotate(a);
 	ft_printf("ra\n");
-	validate_stack(*a);
 }
 
 void	rb(t_node **b)
