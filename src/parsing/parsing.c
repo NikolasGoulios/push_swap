@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:21:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/27 16:02:22 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/28 21:44:21 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static char	**split_multiple_arguments(int argc, char **argv)
 	char	**av_arr;
 	int		i;
 
+	(void)argv;
 	av_arr = ft_calloc(argc, sizeof(char *));
 	if (!av_arr)
 		return (NULL);
