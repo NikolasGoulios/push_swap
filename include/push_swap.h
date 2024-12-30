@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/30 21:16:25 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/30 22:51:22 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void				error_indicator(t_node **a);
 void				free_args(char **updated_args);
 char				**parsing_arguments(int argc, char **argv);
 void				free_av_arr(char **av_arr, int size);
-int	is_valid_integer(char *arg);
+int					is_valid_integer(char *arg);
 
 // Stack initiation
-void				init_stack_a(t_node **a, char **arguments);
+int					init_stack_a(t_node **a, char **arguments);
 void				init_stack_b(t_node **stack_a, t_node **stack_b);
 void				sort_fine_tuning(t_node **a, t_node **b);
 void				sort_turk(t_node **a, t_node **b, int size);
@@ -66,6 +66,7 @@ void				init_nodes_b(t_node *a, t_node *b);
 void				min_on_top(t_node **stack);
 void				execute_rotations(t_node **a, t_node **b,
 						t_node *cheapest_node, int direction);
+void				cleanup(t_node **a, t_node **b, char **updated_args);
 
 // Commands Functions
 void				push(t_node **src, t_node **dst);

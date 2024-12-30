@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:51:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/30 22:08:32 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/30 22:46:42 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,14 @@ int	main(int argc, char **argv)
 	init_stack_a(&a, updated_args);
 	if (!is_stack_ordered(a))
 		sort_fine_tuning(&a, &b);
-	free_stack(&a);
-	free_stack(&b);
-	free_args(updated_args);
+	else 
+	{
+		cleanup(&a, &b, updated_args);
+		return (1);
+	}
+	// free_stack(&a);
+	// free_stack(&b);
+	// free_args(updated_args);
+	cleanup(&a, &b, updated_args);
 	return (0);
 }

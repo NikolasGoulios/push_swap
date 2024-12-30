@@ -6,12 +6,21 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:41:37 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/30 22:06:21 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/30 22:47:08 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void cleanup(t_node **a, t_node **b, char **updated_args)
+{
+    if (a)
+        free_stack(a);
+    if (b)
+        free_stack(b);
+    if (updated_args)
+        free_args(updated_args);
+}
 void	free_stack(t_node **stack)
 {
 	t_node	*temp;
