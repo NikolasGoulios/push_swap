@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/21 21:01:25 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/30 21:16:25 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void				free_stack(t_node **stack);
 void				error_indicator(t_node **a);
 void				free_args(char **updated_args);
 char				**parsing_arguments(int argc, char **argv);
+void				free_av_arr(char **av_arr, int size);
+int	is_valid_integer(char *arg);
 
 // Stack initiation
 void				init_stack_a(t_node **a, char **arguments);
@@ -47,7 +49,7 @@ void				prep_for_push(t_node **stack, t_node *top_node,
 						char stack_name);
 
 // Nodes initiation
-int					is_stack_dublicate(t_node *a, long num);
+int					is_stack_duplicate(t_node *a, long num);
 int					is_stack_ordered(t_node *a);
 
 // Stack Utils
@@ -64,7 +66,6 @@ void				init_nodes_b(t_node *a, t_node *b);
 void				min_on_top(t_node **stack);
 void				execute_rotations(t_node **a, t_node **b,
 						t_node *cheapest_node, int direction);
-
 
 // Commands Functions
 void				push(t_node **src, t_node **dst);

@@ -6,13 +6,13 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:23:29 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/27 16:05:52 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/30 21:15:15 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_stack_dublicate(t_node *a, long n)
+int	is_stack_duplicate(t_node *a, long n)
 {
 	while (a)
 	{
@@ -55,4 +55,19 @@ void	validate_stack(t_node *stack)
 		if (counter > 100)
 			return ;
 	}
+}
+
+int	is_valid_integer(char *arg)
+{
+	if (*arg == '-' || *arg == '+')
+		arg++;
+	if (*arg == '\0')
+		return (0);
+	while (*arg)
+	{
+		if (!ft_isdigit((unsigned char)*arg))
+			return (0);
+		arg++;
+	}
+	return (1);
 }

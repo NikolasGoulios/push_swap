@@ -2,6 +2,7 @@
 	"files.associations": {
 		"push_swap.h": "c",
 		"queue": "c",
-		"stack": "c"
+		"stack": "c",
+		"limits.h": "c"
 	}
 }

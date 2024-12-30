@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:51:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/03 18:17:30 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/30 21:09:08 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	main(int argc, char **argv)
 	t_node	*b;
 	char	**updated_args;
 
-	a = NULL; // Why we initialize pointers into NULL ?
-	b = NULL; // Same
+	a = NULL;
+	b = NULL;
 	updated_args = parsing_arguments(argc, argv);
 	if (!updated_args)
 		return (1);
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 		free_stack(&a);
 	if (b)
 		free_stack(&b);
-	free_args(updated_args);
+	if (updated_args)
+		free_args(updated_args);
 	return (0);
 }
