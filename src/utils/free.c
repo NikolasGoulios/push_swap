@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:41:37 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/30 21:03:16 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/30 22:06:21 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,25 @@ void	error_indicator(t_node **a)
 	free_stack(a);
 	a = NULL;
 }
-void	free_args(char **updated_args)
+void free_args(char **updated_args)
 {
-	int	i;
+    int i = 0;
 
-	i = 0;
-	if (updated_args)
-	{
-		while (updated_args[i])
-		{
-			free(updated_args[i]);
-			updated_args[i] = NULL;
-			i++;
-		}
-		free(updated_args);
-	}
+    if (!updated_args)
+        return;
+    while (updated_args[i])
+    {
+        if (updated_args[i])
+        {
+            free(updated_args[i]);
+            updated_args[i] = NULL;
+        }
+        i++;
+    }
+    free(updated_args);
+    updated_args = NULL;
 }
+
 
 void	free_av_arr(char **av_arr, int size)
 {
