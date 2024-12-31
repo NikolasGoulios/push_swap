@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:23:29 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/30 21:15:15 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/31 02:16:57 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,13 @@ int	is_valid_integer(char *arg)
 		return (0);
 	while (*arg)
 	{
+		if (*arg == '-' || *arg == '+')
+			return 0;
 		if (!ft_isdigit((unsigned char)*arg))
+		{
+			//write (STDERR_FILENO, "Error\n", 6);
 			return (0);
+		}
 		arg++;
 	}
 	return (1);

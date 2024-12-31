@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:21:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/30 21:18:32 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/31 03:12:13 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	**parsing_arguments(int argc, char **argv)
 		av_arr = split_multiple_arguments(argc, argv);
 	if (!av_arr || !is_valid_integer(*av_arr))
 	{
+		write(STDERR_FILENO, "Error\n", 6);
 		free_args(av_arr);
 		return (NULL);
 	}

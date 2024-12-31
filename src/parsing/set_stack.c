@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:37:53 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/30 23:02:35 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/31 02:21:06 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void		append_node(t_node **stack, long n);
 static t_node	*create_node(long n);
-int				is_number(char *arg);
 
 int init_stack_a(t_node **a, char **arguments)
 {
@@ -29,18 +28,8 @@ int init_stack_a(t_node **a, char **arguments)
             num = ft_atol(arguments[i]);
         else
 			return (1);
-        // {
-        //     error_indicator(a);
-        //     //free_args(arguments);
-        //     return;
-        // }
         if (num > INT_MAX || num < INT_MIN || is_stack_duplicate(*a, num))
 			return (1);
-        // {
-        //     error_indicator(a);
-        //     //free_args(arguments);
-        //     return;
-        // }
         append_node(a, num);
         i++;
     }

@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/30 22:51:22 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/31 00:42:12 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void				min_on_top(t_node **stack);
 void				execute_rotations(t_node **a, t_node **b,
 						t_node *cheapest_node, int direction);
 void				cleanup(t_node **a, t_node **b, char **updated_args);
+void				move_to_top(t_node **stack, t_node *target_node, char stack_name);
 
 // Commands Functions
 void				push(t_node **src, t_node **dst);
