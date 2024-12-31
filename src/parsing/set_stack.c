@@ -15,24 +15,25 @@
 static void		append_node(t_node **stack, long n);
 static t_node	*create_node(long n);
 
-int init_stack_a(t_node **a, char **arguments)
+int	init_stack_a(t_node **a, char **arguments)
 {
-    long num;
-    int i = 0;
+	long	num;
+	int		i;
 
-    if (!a)
-        return (1);
-    while (arguments && arguments[i])
-    {
-        if (is_valid_integer(arguments[i]))
-            num = ft_atol(arguments[i]);
-        else
+	i = 0;
+	if (!a)
+		return (1);
+	while (arguments && arguments[i])
+	{
+		if (is_valid_integer(arguments[i]))
+			num = ft_atol(arguments[i]);
+		else
 			return (1);
-        if (num > INT_MAX || num < INT_MIN || is_stack_duplicate(*a, num))
+		if (num > INT_MAX || num < INT_MIN || is_stack_duplicate(*a, num))
 			return (1);
-        append_node(a, num);
-        i++;
-    }
+		append_node(a, num);
+		i++;
+	}
 	return (0);
 }
 
@@ -76,4 +77,3 @@ static t_node	*create_node(long n)
 	node->prev = NULL;
 	return (node);
 }
-

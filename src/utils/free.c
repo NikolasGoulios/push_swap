@@ -6,21 +6,22 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:41:37 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/31 02:18:54 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/31 04:25:14 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void cleanup(t_node **a, t_node **b, char **updated_args)
+void	cleanup(t_node **a, t_node **b, char **updated_args)
 {
-    if (a)
-        free_stack(a);
-    if (b)
-        free_stack(b);
-    if (updated_args)
-        free_args(updated_args);
+	if (a)
+		free_stack(a);
+	if (b)
+		free_stack(b);
+	if (updated_args)
+		free_args(updated_args);
 }
+
 void	free_stack(t_node **stack)
 {
 	t_node	*temp;
@@ -36,23 +37,24 @@ void	free_stack(t_node **stack)
 	*stack = NULL;
 }
 
-void free_args(char **updated_args)
+void	free_args(char **updated_args)
 {
-    int i = 0;
+	int	i;
 
-    if (!updated_args)
-        return;
-    while (updated_args[i])
-    {
-        if (updated_args[i])
-        {
-            free(updated_args[i]);
-            updated_args[i] = NULL;
-        }
-        i++;
-    }
-    free(updated_args);
-    updated_args = NULL;
+	i = 0;
+	if (!updated_args)
+		return ;
+	while (updated_args[i])
+	{
+		if (updated_args[i])
+		{
+			free(updated_args[i]);
+			updated_args[i] = NULL;
+		}
+		i++;
+	}
+	free(updated_args);
+	updated_args = NULL;
 }
 
 void	free_av_arr(char **av_arr, int size)

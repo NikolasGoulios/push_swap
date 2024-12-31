@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:31:54 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 05:10:42 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/31 04:31:24 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,3 @@ void	pa(t_node **a, t_node **b)
 	push(b, a);
 	ft_printf("pa\n");
 }
-

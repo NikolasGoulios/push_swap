@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:51:57 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/31 02:15:49 by ngoulios         ###   ########.fr       */
+/*   Updated: 2024/12/31 04:31:01 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	main(int argc, char **argv)
 	{
 		write (STDERR_FILENO, "Error\n", 6);
 		cleanup(&a, &b, updated_args);
-		return 1;
+		return (1);
 	}
-	else 
+	else
 	{
 		if (!is_stack_ordered(a))
 			sort_fine_tuning(&a, &b);
