@@ -6,12 +6,12 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/31 00:42:12 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/12 15:36:12 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <../lib/libft/libft.h>
 # include <limits.h>
@@ -42,7 +42,6 @@ int					is_valid_integer(char *arg);
 
 // Stack initiation
 int					init_stack_a(t_node **a, char **arguments);
-void				init_stack_b(t_node **stack_a, t_node **stack_b);
 void				sort_fine_tuning(t_node **a, t_node **b);
 void				sort_turk(t_node **a, t_node **b, int size);
 void				prep_for_push(t_node **stack, t_node *top_node,
@@ -67,7 +66,8 @@ void				min_on_top(t_node **stack);
 void				execute_rotations(t_node **a, t_node **b,
 						t_node *cheapest_node, int direction);
 void				cleanup(t_node **a, t_node **b, char **updated_args);
-void				move_to_top(t_node **stack, t_node *target_node, char stack_name);
+void				move_to_top(t_node **stack, t_node *target_node,
+						char stack_name);
 
 // Commands Functions
 void				push(t_node **src, t_node **dst);
