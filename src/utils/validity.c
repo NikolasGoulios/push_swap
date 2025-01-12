@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:23:29 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/31 02:16:57 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/12 11:26:01 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,21 @@ int	is_stack_ordered(t_node *a)
 	return (1);
 }
 
-void	validate_stack(t_node *stack)
-{
-	t_node *current;
-	int counter;
+// void	validate_stack(t_node *stack)
+// {
+// 	t_node *current;
+// 	int counter;
 
-	current = stack;
-	counter = 0;
-	while (current)
-	{
-		current = current->next;
-		counter++;
-		if (counter > 100)
-			return ;
-	}
-}
+// 	current = stack;
+// 	counter = 0;
+// 	while (current)
+// 	{
+// 		current = current->next;
+// 		counter++;
+// 		if (counter > 100)
+// 			return ;
+// 	}
+// }
 
 int	is_valid_integer(char *arg)
 {
@@ -68,10 +68,7 @@ int	is_valid_integer(char *arg)
 		if (*arg == '-' || *arg == '+')
 			return 0;
 		if (!ft_isdigit((unsigned char)*arg))
-		{
-			//write (STDERR_FILENO, "Error\n", 6);
 			return (0);
-		}
 		arg++;
 	}
 	return (1);
