@@ -22,13 +22,13 @@ void	sort_turk(t_node **a, t_node **b, int size)
 		return ;
 	while (size-- > 3 && !is_stack_ordered(*a))
 	{
-    	if (stack_size(*b) < 2)
-        	pb(b, a);
-   		 else
-    	{
-        	init_nodes_a(*a, *b);
-        	move_a_to_b(a, b);
-    	}
+		if (stack_size(*b) < 2)
+			pb(b, a);
+		else
+		{
+			init_nodes_a(*a, *b);
+			move_a_to_b(a, b);
+		}
 	}
 	sort_three(a);
 	while (*b)
