@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:23:29 by ngoulios          #+#    #+#             */
-/*   Updated: 2025/01/12 14:37:39 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:26:43 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,6 @@ int	is_stack_ordered(t_node *a)
 	}
 	return (1);
 }
-
-// void	validate_stack(t_node *stack)
-// {
-// 	t_node *current;
-// 	int counter;
-
-// 	current = stack;
-// 	counter = 0;
-// 	while (current)
-// 	{
-// 		current = current->next;
-// 		counter++;
-// 		if (counter > 100)
-// 			return ;
-// 	}
-// }
 
 int	is_valid_integer(char *arg)
 {
