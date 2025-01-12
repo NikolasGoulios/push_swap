@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:37:53 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/31 02:21:06 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/12 10:49:57 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ static void	append_node(t_node **stack, long n)
 	if (!node)
 		return ;
 	if (!(*stack))
-	{
 		*stack = node;
-	}
 	else
 	{
 		last_node = find_last(*stack);
