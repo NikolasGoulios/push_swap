@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:28:32 by ngoulios          #+#    #+#             */
-/*   Updated: 2025/01/12 16:26:20 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:42:47 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ void	sort_turk(t_node **a, t_node **b, int size)
 		return ;
 	while (size-- > 3 && !is_stack_ordered(*a))
 	{
-		if (stack_size(*b) < 2)
+		if (get_stack_size(*b) < 2)
 			pb(b, a);
 		else
 		{
-			init_nodes_a(*a, *b);
+			calculate_metadata_a(*a, *b);
 			move_a_to_b(a, b);
 		}
 	}
 	sort_three(a);
 	while (*b)
 	{
-		init_nodes_b(*a, *b);
+		calculate_metadata_b(*a, *b);
 		move_b_to_a(a, b);
 	}
 	current_index(*a);

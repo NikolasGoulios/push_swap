@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:08:33 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/21 21:01:52 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:31:10 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ void	rotate(t_node **stack)
 		return ;
 	last_node = find_last(*stack);
 	if (last_node == *stack)
-	{
-		printf("Error: Circular reference detected in rotate\n");
 		return ;
-	}
 	last_node->next = *stack;
 	(*stack)->prev = last_node;
 	*stack = (*stack)->next;

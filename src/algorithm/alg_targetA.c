@@ -6,22 +6,22 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 23:50:00 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/31 04:46:10 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:49:22 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	cost_analysis_a(t_node *a, t_node *b);
+static void	evaluate_push_costs_a(t_node *a, t_node *b);
 static void	set_target_a(t_node *a, t_node *b);
 static int	calculate_cost(int index, int length);
 
-void	init_nodes_a(t_node *a, t_node *b)
+void	calculate_metadata_a(t_node *a, t_node *b)
 {
 	current_index(a);
 	current_index(b);
 	set_target_a(a, b);
-	cost_analysis_a(a, b);
+	evaluate_push_costs_a(a, b);
 	set_cheapest(a);
 }
 
@@ -38,13 +38,13 @@ static int	calculate_cost(int index, int length)
 		return (reverse_cost);
 }
 
-static void	cost_analysis_a(t_node *a, t_node *b)
+static void	evaluate_push_costs_a(t_node *a, t_node *b)
 {
 	int	len_a;
 	int	len_b;
 
-	len_a = stack_size(a);
-	len_b = stack_size(b);
+	len_a = get_stack_size(a);
+	len_b = get_stack_size(b);
 	while (a)
 	{
 		a->push_cost = calculate_cost(a->index, len_a);

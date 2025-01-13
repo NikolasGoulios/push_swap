@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 19:23:22 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/18 05:15:36 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:30:18 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ t_node	*find_last(t_node *last_node)
 	return (last_node);
 }
 
-int	stack_size(t_node *stack)
+int	get_stack_size(t_node *stack)
 {
 	int	size;
 
 	size = 0;
 	while (stack)
 	{
-		size++;
 		stack = stack->next;
+		size++;
 	}
 	return (size);
 }

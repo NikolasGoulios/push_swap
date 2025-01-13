@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 00:00:36 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/12/28 20:56:51 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:28:27 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	current_index(t_node *stack)
 	i = 0;
 	if (!stack)
 		return ;
-	median = stack_size(stack) / 2;
+	median = get_stack_size(stack) / 2;
 	while (stack)
 	{
 		stack->index = i;

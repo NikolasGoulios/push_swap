@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 00:28:10 by ngoulios          #+#    #+#             */
-/*   Updated: 2024/11/17 00:41:17 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:42:47 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	set_target_b(t_node *a, t_node *b);
 
-void	init_nodes_b(t_node *a, t_node *b)
+void	calculate_metadata_b(t_node *a, t_node *b)
 {
 	current_index(a);
 	current_index(b);

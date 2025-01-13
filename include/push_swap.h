@@ -6,7 +6,7 @@
 /*   By: ngoulios <ngoulios@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:22:21 by ngoulios          #+#    #+#             */
-/*   Updated: 2025/01/12 15:36:12 by ngoulios         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:42:47 by ngoulios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int					is_stack_duplicate(t_node *a, long num);
 int					is_stack_ordered(t_node *a);
 
 // Stack Utils
-int					stack_size(t_node *a);
+int					get_stack_size(t_node *a);
 t_node				*find_last(t_node *last_node);
 t_node				*find_max(t_node *a);
 t_node				*find_min(t_node *stack);
@@ -60,8 +60,8 @@ void				set_cheapest(t_node *stack);
 t_node				*get_cheapest(t_node *stack);
 void				current_index(t_node *stack);
 void				min_on_top(t_node **a);
-void				init_nodes_a(t_node *a, t_node *b);
-void				init_nodes_b(t_node *a, t_node *b);
+void				calculate_metadata_a(t_node *a, t_node *b);
+void				calculate_metadata_b(t_node *a, t_node *b);
 void				min_on_top(t_node **stack);
 void				execute_rotations(t_node **a, t_node **b,
 						t_node *cheapest_node, int direction);
