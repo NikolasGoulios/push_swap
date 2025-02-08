@@ -88,9 +88,6 @@ typedef struct s_node {
     struct s_node *prev;
 } t_node;
 ```
-
-It also defines **FORWARD** and **REVERSE** macros for rotations.
-
 ---
 
 ### **5.2 Main Execution Flow**
@@ -101,7 +98,7 @@ It also defines **FORWARD** and **REVERSE** macros for rotations.
    - Otherwise, sorting is initiated using `sort_fine_tuning()`.
 
 2. **`parsing.c`**  
-   - Handles single/multiple argument parsing.
+   - Handles single/multiple argument parsing, **but not both at the same time.**
    - Uses `ft_split()` for space-separated input.
    - Calls `is_valid_integer()` to validate input.
 
@@ -229,5 +226,5 @@ This section tracks active bugs and areas of improvement if any.
   _Potential Fixes:_ The parsing part seems causing this issue.
 
 ### **Planned Improvements**
-- Improve error handling and input validation.
+- Improve error handling and input validation/ Handle mixed format input.
 ---
