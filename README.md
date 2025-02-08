@@ -1,4 +1,6 @@
-# **Push Swap Documentation**
+![Alt Text](https://github.com/ayogun/42-project-badges/blob/main/badges/push_swape.png?raw=true)
+
+# **Push Swap**
 
 ## **1. Introduction**
 Push Swap is a sorting algorithm project implemented in **C**, designed to efficiently sort a stack of integers with a limited set of stack operations. It follows the **Turk Algorithm** for optimal sorting efficiency. The purpose of the project is to print the exact sequence of steps the algorithm executes to sort the numbers successfully. 
@@ -9,6 +11,7 @@ The current algorithm has a time complexity of **O(N²)** in the worst case and 
 ## **2. Project Structure**
 The repository consists of multiple source files, each responsible for a different aspect of the program:
 
+```sh
 📁 Push_swap/
 │── 📁 lib/                
 │   ├── 📁 libft/              # Custom libft library submodule
@@ -49,7 +52,8 @@ The repository consists of multiple source files, each responsible for a differe
 ## **3. Installation**
 To compile the program, ensure you have **Makefile**
 
-``` make
+```sh
+make
 ```
 
 ---
