@@ -191,7 +191,7 @@ To prevent **memory leaks**, `free.c` deallocates all used memory:
 ---
 
 ## **6. Error Handling**
-If an error is detected (e.g., invalid input, duplicates), the program:
+If an error is detected (e.g., invalid input, duplicates, sorted list), the program:
 1. Prints `"Error"` to **STDERR**.
 2. Frees allocated memory.
 3. Exits gracefully.
@@ -210,7 +210,7 @@ void error_indicator(t_node **a) {
 ## **7. Conclusion**
 This project efficiently sorts integers with minimal operations, following the **Turk Algorithm**. The modular design ensures clarity, while the **memory-safe implementation** prevents leaks.
 
-Additionally, this project passed with **100%**, successfully meeting performance benchmarks:
+> <span style="color:green"><b>✅ Passed 100%:</b> This project successfully met all performance benchmarks!</span>
 - Sorting **100 numbers** in **less than 700 steps** (average: **550 steps**).
 - Sorting **500 numbers** in **less than 5500 operations** (achieved: **~5000 steps**).
 
