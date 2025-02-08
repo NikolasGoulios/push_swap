@@ -20,34 +20,34 @@ The repository consists of multiple source files, each responsible for a differe
 │   ├── 📁 libft/              # Custom libft library submodule
 │
 │── 📁 include/               
-│   ├── 📜 push_swap.h        # Header file defining structures and function prototypes
+│   ├── push_swap.h        # Header file defining structures and function prototypes
 │
 │── 📁 src/                   
 │   ├── 📁 algorithm/         # Sorting algorithm logic
-│   │   ├── 📜 alg_sorting.c
-│   │   ├── 📜 alg_targetA.c
-│   │   ├── 📜 alg_targetB.c
-│   │   ├── 📜 alg_tools.c
-│   │   ├── 📜 alg_utils.c
-│   │   ├── 📜 alg_rotations.c
+│   │   ├── alg_sorting.c
+│   │   ├── alg_targetA.c
+│   │   ├── alg_targetB.c
+│   │   ├── alg_tools.c
+│   │   ├── alg_utils.c
+│   │   ├── alg_rotations.c
 │   │
 │   ├── 📁 commands/          # Stack operations (push, swap, rotate, reverse rotate)
-│   │   ├── 📜 cmd_push.c
-│   │   ├── 📜 cmd_swap.c
-│   │   ├── 📜 cmd_rotate.c
-│   │   ├── 📜 cmd_revrotate.c
+│   │   ├── cmd_push.c
+│   │   ├── cmd_swap.c
+│   │   ├── cmd_rotate.c
+│   │   ├── cmd_revrotate.c
 │   │
 │   ├── 📁 parsing/              # Stack initialization and parsing
-│   │   ├── 📜 parsing.c
-│   │   ├── 📜 set_stack.c
-│   │   ├── 📜 sort_init.c
+│   │   ├── parsing.c
+│   │   ├── set_stack.c
+│   │   ├── sort_init.c
 │   │
 │   ├── 📁 utils/             # Utility functions
-│   │   ├── 📜 utils.c
-│   │   ├── 📜 validity.c
-│   │   ├── 📜 free.c
+│   │   ├── utils.c
+│   │   ├── validity.c
+│   │   ├── free.c
 │   │
-│   ├── 📜 main.c             # Main entry point
+│   ├── main.c             # Main entry point
 ```
 
 ---
