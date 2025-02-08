@@ -1,6 +1,9 @@
-![Alt Text](https://github.com/ayogun/42-project-badges/blob/main/badges/push_swape.png?raw=true)
 
-# **Push Swap**
+<h1 align="center">Push Swap</h1>
+
+<div align="center">
+  <img src="https://github.com/ayogun/42-project-badges/blob/main/badges/push_swape.png?raw=true" alt="Push Swap Badge">
+</div>
 
 ## **1. Introduction**
 Push Swap is a sorting algorithm project implemented in **C**, designed to efficiently sort a stack of integers with a limited set of stack operations. It follows the **Turk Algorithm** for optimal sorting efficiency. The purpose of the project is to print the exact sequence of steps the algorithm executes to sort the numbers successfully. 
