@@ -227,4 +227,5 @@ This section tracks active bugs and areas of improvement if any.
 
 ### **Planned Improvements**
 - Improve error handling and input validation/ Handle mixed format input.
+- Improve architecture by seperating the headerfiles. 
 ---
